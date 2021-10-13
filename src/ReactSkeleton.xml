@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="itvisors.reactskeleton.ReactSkeleton" pluginWidget="true" needsEntityContext="true" offlineCapable="true"
+        supportedPlatform="Web"
+        xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>React Skeleton</name>
+    <description>a skeleton widget made in react</description>
+
+      <properties>
+        <propertyGroup caption="General">
+
+            <property key="pageContent" type="form" required="true">
+                <caption>Result page</caption>
+                <description>The page to load and display. Result page is required.</description>
+            </property>
+
+            <property key="variant" type="enumeration" defaultValue = "rectangular" required="true">
+                <caption>Variant</caption>
+                <description>Determines the type of content that will be redered and shown in the skeleton</description>
+                <enumerationValues>
+                    <enumerationValue key="rectangular">Rectangular</enumerationValue>
+                    <enumerationValue key="circular">Circular</enumerationValue>
+                    <enumerationValue key="text">Text</enumerationValue>
+                </enumerationValues>
+            </property>
+
+             <property key="animation" type="enumeration" defaultValue = "wave" required="true">
+                <caption>Animation</caption>
+                <description>Determines the type of animation that is used when the skeleton is shown</description>
+                <enumerationValues>
+                    <enumerationValue key="wave">Rectangular</enumerationValue>
+                    <enumerationValue key="pulse">Circular</enumerationValue>
+                </enumerationValues>
+            </property>
+
+        </propertyGroup>
+    </properties>
+
+  </widget

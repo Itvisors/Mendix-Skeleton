@@ -1,0 +1,35 @@
+{
+  "name": "reactskeleton",
+  "widgetName": "ReactSkeleton",
+  "version": "1.0.0",
+  "description": "a skeleton widget made in react",
+  "copyright": "2021 ITvisors",
+  "author": "Paul Janssen",
+  "engines": {
+    "node": ">=12"
+  },
+  "config": {
+    "projectPath": "./tests/testProject/",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": "3000"
+  },
+  "packagePath": "itvisors",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^9.0.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.3",
+    "classnames": "^2.2.6"
+  }
+}
