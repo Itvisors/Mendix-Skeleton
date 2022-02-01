@@ -6,14 +6,8 @@
     <name>React Skeleton</name>
     <description>a skeleton widget made in react</description>
 
-      <properties>
+    <properties>
         <propertyGroup caption="General">
-
-            <property key="pageContent" type="form" required="true">
-                <caption>Result page</caption>
-                <description>The page to load and display. Result page is required.</description>
-            </property>
-
             <property key="variant" type="enumeration" defaultValue = "rectangular" required="true">
                 <caption>Variant</caption>
                 <description>Determines the type of content that will be redered and shown in the skeleton</description>
@@ -28,12 +22,26 @@
                 <caption>Animation</caption>
                 <description>Determines the type of animation that is used when the skeleton is shown</description>
                 <enumerationValues>
-                    <enumerationValue key="wave">Rectangular</enumerationValue>
-                    <enumerationValue key="pulse">Circular</enumerationValue>
+                    <enumerationValue key="wave">Wave</enumerationValue>
+                    <enumerationValue key="pulse">Pulse</enumerationValue>
                 </enumerationValues>
             </property>
 
-        </propertyGroup>
-    </properties>
+            <property key="width" type="integer" defaultValue="200" required="true">
+                <caption>Width in pixels</caption>
+                <description>The width in pixels</description>
+            </property>
 
-  </widget
+            <property key="height" type="integer" defaultValue="150" required="true">
+                <caption>Height in pixels</caption>
+                <description>The height in pixels</description>
+            </property>
+
+            <property key="content" type="widgets" required="true">
+                <caption>Content</caption>
+                <description>Content to put inside</description>
+            </property>                      
+        </propertyGroup>
+
+ </properties>
+  </widget>

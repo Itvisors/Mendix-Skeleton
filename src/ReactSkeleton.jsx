@@ -1,6 +1,6 @@
 import "./ui/ReactSkeleton.css";
 import { Component, createElement } from "react";
-import Skeleton from "@mui/material/Skeleton";
+import Skeleton from "@material-ui/lab/Skeleton";
 
 export default class ReactSkeleton extends Component {
     constructor(props) {
@@ -11,37 +11,78 @@ export default class ReactSkeleton extends Component {
         };
     }
 
-    determineVariant(variant) {
-        switch (variant) {
+    //to-do
+    componentDidUpdate() {}
+
+    determineVariant() {
+        let className;
+        switch (this.props.variant) {
             case "rectangular":
-                variant = "rectangular";
+                className = "rectangular";
                 break;
             case "circular":
-                variant = "circular";
+                className = "circular";
                 break;
             case "text":
-                variant = "text";
+                className = "text";
                 break;
             default:
-                variant = "rectangular";
+                className = "rectangular";
         }
+        return className;
     }
 
-    determineAnimation(animation) {
-        switch (animation) {
+    determineAnimation() {
+        let animationToShow;
+        switch (this.props.animation) {
             case "wave":
-                animation = "wave";
+                animationToShow = "wave";
                 break;
             case "pulse":
-                animation = "pulse";
+                animationToShow = "pulse";
                 break;
             default:
-                animation = "wave";
+                animationToShow = "wave";
         }
-        return animation;
+        return animationToShow;
     }
 
     render() {
-        return <Skeleton variant={this.determineVariant} animation={this.determineAnimation} />;
+        let variantToShow;
+        switch (this.props.variant) {
+            case "rectangular":
+                variantToShow = "rectangular";
+                break;
+            case "circular":
+                variantToShow = "circular";
+                break;
+            case "text":
+                variantToShow = "text";
+                break;
+            default:
+                variantToShow = "rectangular";
+        }
+
+        let animationToShow;
+        switch (this.props.animation) {
+            case "wave":
+                animationToShow = "wave";
+                break;
+            case "pulse":
+                animationToShow = "pulse";
+                break;
+            default:
+                animationToShow = "wave";
+        }
+
+        return (
+            <Skeleton
+                variant={this.determineVariant}
+                animation={animationToShow}
+                content={this.props.content}
+                width={Number(this.props.width)}
+                height={Number(this.props.height)}
+            />
+        );
     }
 }
